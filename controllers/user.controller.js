@@ -109,6 +109,8 @@ module.exports.updateUser = (req, res) => {
 
 
 module.exports.bulkUpate = (req, res) => {
+
+    
     res.json({ message: 'users bulk update' })
 }
 
