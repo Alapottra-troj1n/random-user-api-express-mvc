@@ -68,7 +68,42 @@ module.exports.saveUser = (req, res) => {
 
 
 module.exports.updateUser = (req, res) => {
-    res.json({ message: 'user updated' })
+
+    const {id, updatedUserData} = req.body;
+    console.log(updatedUserData)
+
+
+    fs.readFile('users.json', 'utf-8', function (err, data) {
+        if (err) throw err;
+
+
+        const allusers = JSON.parse(data);
+        const userIndex = allusers.findIndex(user => user.id === id);
+
+        const userKey = Object.keys(updatedUserData);
+        const userValue = updatedUserData[userKey[0]];
+      
+        
+        allusers[userIndex][userKey] = userValue;
+
+        fs.writeFile("users.json", JSON.stringify(allusers), (err) => {
+            if(err){
+                console.log(err);
+            }
+            res.json({ message: 'user update route' })
+        })
+
+
+       
+
+
+
+    });
+
+
+
+
+   
 }
 
 
