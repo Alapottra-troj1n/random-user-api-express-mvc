@@ -1,7 +1,23 @@
 const fs = require('fs');
 
 module.exports.getRandomUser = (req, res) => {
-    res.json({ message: 'random user' })
+
+     fs.readFile('users.json','utf-8' ,function (err, data) {
+        if (err) throw err;
+
+        
+        const allusers = JSON.parse(data);
+
+        const randomNumber = Math.floor(Math.random() * allusers.length); + 1
+        const randomUser = allusers[randomNumber];
+
+        res.json({randomUser : randomUser});
+
+       
+        
+    });
+
+
 }
 
 module.exports.getAllUsers = (req, res) => {
