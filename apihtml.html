@@ -1,12 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h2>Welcome to Random-User-API </h2>
-</body>
+  </head>
+  <body>
+    <h2>Welcome to Random-User-API</h2>
+
+    <h3>API ROUTES</h3>
+
+    <hr />
+
+    <h4>
+      Show a Random User - GET REQUEST :
+      <small>http://localhost:5000/api/v1/user/random</small>
+    </h4>
+    <h4>
+      Show All User - GET REQUEST :
+      <small>http://localhost:5000/api/v1/user/all</small>
+    </h4>
+    <h4>
+      Save a User - POST REQUEST :
+      <small>http://localhost:5000/api/v1/user/save</small> | SYNTAX JSON AS
+      BODY :
+      <small
+        >{"id":"template", "gender": "template","name":"template", "contact":
+        "template", "address": "template", "photoUrl": "template"}</small
+      >
+    </h4>
+    <h4>
+      Update a User - PATCH REQUEST :
+      <small>http://localhost:5000/api/v1/user/update</small> | SYNTAX JSON AS
+      BODY :
+      <small> { "id":3, "updatedUserData":{ "address": "berlin" } }</small>
+    </h4>
+
+    <h4>
+      Bulk Update Users - PATCH REQUEST :
+      <small>http://localhost:5000/api/v1/user/bulk-update</small> | SYNTAX JSON AS
+      BODY :
+      <small>[{"id": 3}, {"id": 4}] </small>
+    </h4>
+
+    <h4>
+        Delete a User - DELETE REQUEST :
+        <small>http://localhost:5000/api/v1/user/delete</small> | SYNTAX JSON AS
+        BODY :
+        <small> {
+            "id":4
+       }</small>
+      </h4>
+
+
+
+
+  </body>
 </html>

@@ -30,5 +30,13 @@
     "contact": "alapottra@gmail.com",
     "address": "changed",
     "photoUrl": "Nai"
+  },
+  {
+    "id": "template",
+    "gender": "template",
+    "name": "template",
+    "contact": "template",
+    "address": "template",
+    "photoUrl": "template"
   }
 ]
