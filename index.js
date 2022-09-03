@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors');
 const port = process.env.PORT || 5000;
 const userRoutes = require('./routes/v1/user.route');
+const path = require('path');
 
 //global middleware
 app.use(cors());
@@ -19,7 +20,7 @@ app.use('/api/v1/user',userRoutes)
 
 
 app.get('/', async(req, res)=> {
-    res.json({application: 'random user api'})
+    res.sendFile(path.join(__dirname, '/apihtml.html'));
 })
 
 app.all("*", (req, res) => {
